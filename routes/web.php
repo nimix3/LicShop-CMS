@@ -18,7 +18,11 @@ Route::get('/index', function () {
     return view('index');
 });
 Route::get('/product','ProductController@index');
-
+Route::get('/aboutus','AboutUsController@index');
+Route::get('/support','SupportController@index');
+Route::get('/getsoftware','GetSoftwareController@index');
+Route::get('/order/{id}','ProductController@view_order');
+Route::post('/order/','ProductController@order');
 
 Route::get('/admin', function () {
     return view('admin/index');
@@ -41,3 +45,4 @@ Route::group(['middleware'=>'auth','prefix' => 'admin'],function (){
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index');
