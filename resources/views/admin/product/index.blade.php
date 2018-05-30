@@ -37,5 +37,5 @@
 
         </tbody>
     </table>
-    <a href="/admin/product/add" class="btn btn-info">ثبت محصول جدید</a>
+    <a href="add" class="btn btn-info">ثبت محصول جدید</a>
 @endsection

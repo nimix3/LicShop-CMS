@@ -21,7 +21,7 @@
     <link href="{{asset('css/bootstrap-rtl.min.css')}}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="{{asset('font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -90,9 +90,9 @@
             <div class="col-sm-3 sidenav">
                 <h4>پنل مدیریت</h4>
                 <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="#section1"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> صفحه اصلی</a></li>
-                    <li><a href="/admin/product/"><span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span> محصولات</a></li>
-                    <li><a href="#section3"><span class="glyphicon glyphicon-barcode" aria-hidden="true"></span> سریال</a></li>
+                    <li class="active"><a href="#section1"><span class="fa fa-home" aria-hidden="true"></span> صفحه اصلی</a></li>
+                    <li><a href="/admin/product/"><span class="fa fa-bars" aria-hidden="true"></span> محصولات</a></li>
+                    <li><a href="#section3"><span class="fa fa-barcode" aria-hidden="true"></span> سریال</a></li>
                     <li><a href="#section3"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> سفارشات</a></li>
                     <li><a href="#section3"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> نمایش سایت</a></li>
                     <li><a href="#section3"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> خروج</a></li>
