@@ -32,12 +32,13 @@ Route::get('/admin', function () {
 Route::group(['middleware'=>'auth','prefix' => 'admin'],function (){
 
     Route::get('/product','ProductController@all');
-    Route::get('/serial','SerialController@index');
     Route::get('/product/add','ProductController@create');
     Route::post('/product/store','ProductController@store');
     Route::get('product/edit/{id}','ProductController@edit');
     Route::get('product/delete/{id}','ProductController@delete');
     Route::post('product/update','ProductController@update');
+    Route::get('/serial','SerialController@index');
+    Route::get('/serial/add','SerialController@create');
 
 
 

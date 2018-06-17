@@ -13,11 +13,20 @@
                     <div class="panel-footer">قیمت: {{$item->price}}</div>
                     <div class="panel-footer">تعداد کاربران کامپیوتر: {{$item->count_user_pc}}</div>
                     <div class="panel-footer">تعداد کاربران موبایل: {{$item->count_user_mobile}}</div>
-                    <a href="/order/{{$item->id}}" class="btn btn-block btn-primary btn-success"><span class="glyphicon glyphicon-shopping-cart"></span>سفارش</a>
-
+                    <button data="{{$item->id}}" class="btn btn-block btn-primary btn-success add-basket"><span class="glyphicon glyphicon-shopping-cart"></span>افزودن به سبد خرید</a>
+                    
                 </div>
             </div>
             @endforeach
         </div>
     </div><br><br>
+    <script>
+        $('add-basket').click(function(){
+            var id = $(this).attr('data');
+            $.post('add-basket',{id:id},function($result,$status)
+             {
+                    alert('ok');
+             });
+        });
+    </script>
 @endsection

@@ -27,6 +27,8 @@
             margin: auto;
             min-height:200px;
         }
+        
+    
 
         /* Hide the carousel text when the screen is less than 600 pixels wide */
         @media (max-width: 600px) {
@@ -61,6 +63,9 @@
             </a>
         </div>
         <div id="navbar3" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/basket"><span class="glyphicon glyphicon-shopping-cart"></span>سبد خرید</a></li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/index">صفحه اصلی</a></li>
                 <li><a href="/product">محصولات</a></li>
