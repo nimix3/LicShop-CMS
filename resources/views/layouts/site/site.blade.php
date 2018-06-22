@@ -65,13 +65,17 @@
         <div id="navbar3" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="/basket"><span class="glyphicon glyphicon-shopping-cart"></span>سبد خرید</a></li>
+                <li class=""><a href="{{ url('/wishlist') }}">Wishlist ({{ Cart::instance('wishlist')->count(false) }})</a></li>
+                <li class=""><a href="{{ url('/cart') }}">Cart ({{ Cart::instance('default')->count(false) }})</a></li>
+ 
             </ul>
+
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/index">صفحه اصلی</a></li>
-                <li><a href="/product">محصولات</a></li>
-                <li><a href="/getsoftware">دریافت نرم افزار</a></li>
-                <li><a href="/support">پشتیبانی</a></li>
-                <li><a href="/aboutus">درباره ما</a></li>
+                <li><a href="index">صفحه اصلی</a></li>
+                <li><a href="product">محصولات</a></li>
+                <li><a href="getsoftware">دریافت نرم افزار</a></li>
+                <li><a href="support">پشتیبانی</a></li>
+                <li><a href="aboutus">درباره ما</a></li>
             </ul>
         </div>
         <!--/.nav-collapse -->

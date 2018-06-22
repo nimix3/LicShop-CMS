@@ -23,6 +23,13 @@ Route::get('/support','SupportController@index');
 Route::get('/getsoftware','GetSoftwareController@index');
 Route::get('/order/{id}','ProductController@view_order');
 Route::post('/order/','ProductController@order');
+Route::resource('cart', 'CartController');
+Route::delete('emptyCart', 'CartController@emptyCart');
+Route::post('switchToWishlist/{id}', 'CartController@switchToWishlist');
+
+Route::resource('wishlist', 'WishlistController');
+Route::delete('emptyWishlist', 'WishlistController@emptyWishlist');
+Route::post('switchToCart/{id}', 'WishlistController@switchToCart');
 
 Route::get('/admin', function () {
     return view('admin/index');
