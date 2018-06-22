@@ -14,7 +14,6 @@
                     <div class="panel-footer">قیمت: {{$item->price}}</div>
                     <div class="panel-footer">تعداد کاربران کامپیوتر: {{$item->count_user_pc}}</div>
                     <div class="panel-footer">تعداد کاربران موبایل: {{$item->count_user_mobile}}</div>
-                   
                     <input type="hidden" name="id" value="{{ $item->id }}">
                     <input type="hidden" name="name" value="{{ $item->name }}">
                     <input type="hidden" name="price" value="{{ $item->price }}">

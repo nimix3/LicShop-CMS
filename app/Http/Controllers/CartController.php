@@ -34,11 +34,11 @@ class CartController extends Controller
         });
 
         if (!$duplicates->isEmpty()) {
-            return redirect('cart')->withSuccessMessage('Item is already in your cart!');
+            return redirect('cart')->withSuccessMessage('آیتم در سبد شما قرار دارد');
         }
 
         Cart::add($request->id, $request->name, 1, $request->price)->associate('App\Product');
-        return redirect('cart')->withSuccessMessage('Item was added to your cart!');
+        return redirect('cart')->withSuccessMessage('آیتم به سبد شما اضافه شد');
     }
 
     /**
@@ -56,12 +56,12 @@ class CartController extends Controller
         ]);
 
          if ($validator->fails()) {
-            session()->flash('error_message', 'Quantity must be between 1 and 5.');
+            session()->flash('error_message', 'تعداد باید بین 1 تا 5 باشد');
             return response()->json(['success' => false]);
          }
 
         Cart::update($id, $request->quantity);
-        session()->flash('success_message', 'Quantity was updated successfully!');
+        session()->flash('success_message', 'تعداد بروز شد');
 
         return response()->json(['success' => true]);
 
@@ -76,7 +76,7 @@ class CartController extends Controller
     public function destroy($id)
     {
         Cart::remove($id);
-        return redirect('cart')->withSuccessMessage('Item has been removed!');
+        return redirect('cart')->withSuccessMessage('آیتم حذف شد');
     }
 
     /**
@@ -87,7 +87,7 @@ class CartController extends Controller
     public function emptyCart()
     {
         Cart::destroy();
-        return redirect('cart')->withSuccessMessage('Your cart has been cleared!');
+        return redirect('cart')->withSuccessMessage('سبد شما خالی شد');
     }
 
     /**
@@ -107,13 +107,13 @@ class CartController extends Controller
         });
 
         if (!$duplicates->isEmpty()) {
-            return redirect('cart')->withSuccessMessage('Item is already in your Wishlist!');
+            return redirect('cart')->withSuccessMessage('آیتم در لیست شما قرار دارد');
         }
 
         Cart::instance('wishlist')->add($item->id, $item->name, 1, $item->price)
                                   ->associate('App\Product');
 
-        return redirect('cart')->withSuccessMessage('Item has been moved to your Wishlist!');
+        return redirect('cart')->withSuccessMessage('آیتم به لیست خرید منتقل شد');
 
     }
 }

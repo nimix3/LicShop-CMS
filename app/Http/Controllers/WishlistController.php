@@ -34,13 +34,13 @@ class WishlistController extends Controller
         });
 
         if (!$duplicates->isEmpty()) {
-            return redirect('shop')->withSuccessMessage('Item is already in your wishlist!');
+            return redirect('shop')->withSuccessMessage('آیتم در لیست شما قرار دارد');
         }
 
         Cart::instance('wishlist')->add($request->id, $request->name, 1, $request->price)
                                   ->associate('App\Product');
 
-        return redirect('shop')->withSuccessMessage('Item was added to your wishlist!');
+        return redirect('shop')->withSuccessMessage('آیتم به لیست اضافه شد');
     }
 
     /**
@@ -64,7 +64,7 @@ class WishlistController extends Controller
     public function destroy($id)
     {
         Cart::instance('wishlist')->remove($id);
-        return redirect('wishlist')->withSuccessMessage('Item has been removed!');
+        return redirect('wishlist')->withSuccessMessage('آیتم حذف شد');
     }
 
     /**
@@ -75,7 +75,7 @@ class WishlistController extends Controller
     public function emptyWishlist()
     {
         Cart::instance('wishlist')->destroy();
-        return redirect('wishlist')->withSuccessMessage('Your wishlist has been cleared!');
+        return redirect('wishlist')->withSuccessMessage('لیست شما خالی شد');
     }
 
     /**
@@ -95,13 +95,13 @@ class WishlistController extends Controller
         });
 
         if (!$duplicates->isEmpty()) {
-            return redirect('cart')->withSuccessMessage('Item is already in your shopping cart!');
+            return redirect('cart')->withSuccessMessage('آیتم در سبد خرید شما قرار دارد');
         }
 
         Cart::instance('default')->add($item->id, $item->name, 1, $item->price)
                                  ->associate('App\Product');
 
-        return redirect('wishlist')->withSuccessMessage('Item has been moved to your shopping cart!');
+        return redirect('wishlist')->withSuccessMessage('آیتم به سبد خرید شما منتقل شد');
 
     }
 }

@@ -33,7 +33,7 @@
                 <tbody>
                     @foreach (Cart::content() as $item)
                     <tr>
-                        <td class="table-image"><img src="{{ asset('img/' . $item->model->image) }}" alt="product" class="img-responsive cart-image"></td>
+                        <td class="table-image"><img src="{{ asset('img/' . $item->model->img) }}" alt="product" class="img-responsive cart-image"></td>
                         <td>{{ $item->name }}</td>
                         <td>
                             <select class="quantity" data-id="{{ $item->rowId }}">
@@ -50,12 +50,12 @@
                             <form action="{{ url('cart', [$item->rowId]) }}" method="POST" class="side-by-side">
                                 {!! csrf_field() !!}
                                 <input type="hidden" name="_method" value="DELETE">
-                                <input type="submit" class="btn btn-danger btn-sm" value="Remove">
+                                <input type="submit" class="btn btn-danger btn-sm" value="حذف">
                             </form>
 
                             <form action="{{ url('switchToWishlist', [$item->rowId]) }}" method="POST" class="side-by-side">
                                 {!! csrf_field() !!}
-                                <input type="submit" class="btn btn-success btn-sm" value="To Wishlist">
+                                <input type="submit" class="btn btn-success btn-sm" value="به لیست">
                             </form>
                         </td>
                     </tr>
@@ -90,7 +90,7 @@
                 </tbody>
             </table>
 
-            <a href="{{ url('/shop') }}" class="btn btn-primary btn-lg">ادامه خرید</a> &nbsp;
+            <a href="{{ url('/product') }}" class="btn btn-primary btn-lg">ادامه خرید</a> &nbsp;
             <a href="#" class="btn btn-success btn-lg">پرداخت</a>
 
             <div style="float:right">
@@ -104,7 +104,7 @@
         @else
 
             <h3>سبد خرید شما خالی است</h3>
-            <a href="{{ url('/shop') }}" class="btn btn-primary btn-lg">ادامه خرید</a>
+            <a href="{{ url('/product') }}" class="btn btn-primary btn-lg">ادامه خرید</a>
 
         @endif
 

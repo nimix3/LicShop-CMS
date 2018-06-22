@@ -21,9 +21,9 @@
                 <thead>
                     <tr>
                         <th class="table-image"></th>
-                        <th>Product</th>
+                        <th>محصول</th>
 
-                        <th>Price</th>
+                        <th>قیمت</th>
                         <th class="column-spacer"></th>
                         <th></th>
                     </tr>
@@ -32,7 +32,7 @@
                 <tbody>
                     @foreach (Cart::instance('wishlist')->content() as $item)
                     <tr>
-                        <td class="table-image"><img src="{{ asset('img/' . $item->model->image) }}" alt="product" class="img-responsive cart-image"></td>
+                        <td class="table-image"><img src="{{ asset('img/' . $item->model->img) }}" alt="product" class="img-responsive cart-image"></td>
                         <td>{{ $item->name }}</td>
 
                         <td>${{ $item->subtotal }}</td>
@@ -41,12 +41,12 @@
                             <form action="{{ url('wishlist', [$item->rowId]) }}" method="POST" class="side-by-side">
                                 {!! csrf_field() !!}
                                 <input type="hidden" name="_method" value="DELETE">
-                                <input type="submit" class="btn btn-danger btn-sm" value="Remove">
+                                <input type="submit" class="btn btn-danger btn-sm" value="حذف">
                             </form>
 
                             <form action="{{ url('switchToCart', [$item->rowId]) }}" method="POST" class="side-by-side">
                                 {!! csrf_field() !!}
-                                <input type="submit" class="btn btn-success btn-sm" value="To Cart">
+                                <input type="submit" class="btn btn-success btn-sm" value="به سبد خرید">
                             </form>
                         </td>
                     </tr>
@@ -57,20 +57,20 @@
 
             <div class="spacer"></div>
 
-            <a href="/shop" class="btn btn-primary btn-lg">ادامه خرید</a> &nbsp;
+            <a href="/product" class="btn btn-primary btn-lg">ادامه خرید</a> &nbsp;
 
             <div style="float:right">
                 <form action="{{ url('/emptyWishlist') }}" method="POST">
                     {!! csrf_field() !!}
                     <input type="hidden" name="_method" value="DELETE">
-                    <input type="submit" class="btn btn-danger btn-lg" value="Empty Wishlist">
+                    <input type="submit" class="btn btn-danger btn-lg" value="خالی کردن لیست">
                 </form>
             </div>
 
         @else
 
-            <h3>You have no items in your Wishlist</h3>
-            <a href="/shop" class="btn btn-primary btn-lg">ادامه خرید</a>
+            <h3>لیست خرید شما خالی است</h3>
+            <a href="/product" class="btn btn-primary btn-lg">ادامه خرید</a>
 
         @endif
 
