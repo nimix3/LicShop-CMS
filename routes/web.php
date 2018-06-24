@@ -35,6 +35,11 @@ Route::get('/admin', function () {
     return view('admin/index');
 });
 
+Route::get('/proall', function (Request $request) {
+    $pro = Product::paginate(10);
+    return response()->json($pro);
+});
+
 //Routing
 Route::group(['middleware'=>'auth','prefix' => 'admin'],function (){
 
